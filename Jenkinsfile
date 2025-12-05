@@ -124,7 +124,7 @@ pipeline {
                 docker run -d --name wanderlust-backend -p 5000:5000 kanhiyasharma18/wanderlust-backend-beta:${params.BACKEND_DOCKER_TAG}
 
                 echo "Starting new frontend container..."
-                docker run -d --name wanderlust-frontend -p 80:80 kanhiyasharma18/wanderlust-frontend-beta:${params.FRONTEND_DOCKER_TAG}
+                docker run -d --name wanderlust-frontend -p 80:5173 kanhiyasharma18/wanderlust-frontend-beta:${params.FRONTEND_DOCKER_TAG}
 
                 echo "Currently running containers:"
                 docker ps
