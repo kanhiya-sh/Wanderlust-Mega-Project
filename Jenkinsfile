@@ -60,19 +60,6 @@ pipeline {
                 }
             }
         }
-        
-        stage("SonarQube: Code Quality Gates") {
-    steps {
-        script {
-            timeout(time: 5, unit: 'MINUTES') {
-                def qg = waitForQualityGate(abortPipeline: false)
-                echo "SonarQube Quality Gate status: ${qg.status}"
-            }
-        }
-    }
-}
-
-        
         stage('Exporting environment variables') {
             parallel{
                 stage("Backend env setup"){
